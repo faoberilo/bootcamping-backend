@@ -23,8 +23,8 @@ export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
   @Post()
-  //@UseGuards(AuthGuard("jwt"), RolesGuard)
-  //@Roles(Role.Admin)
+  @UseGuards(AuthGuard("jwt"), RolesGuard)
+  @Roles(Role.Admin)
   create(@Body() createUsuarioDto: CreateUsuarioDto) {
     return this.usuarioService.create(createUsuarioDto);
   }

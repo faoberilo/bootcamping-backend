@@ -10,7 +10,7 @@ import { Role } from "src/auth/models/role.enum";
 @Injectable()
 export class UsuarioService {
   constructor(private prisma: PrismaService) {}
-  //roles: Role[];
+  roles: Role[];
 
   async create(data: Prisma.UsuarioUncheckedCreateInput): Promise<Usuario> {
     data.senha = await bcrypt.hash(data.senha, 10);

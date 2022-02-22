@@ -1,3 +1,3 @@
 web: npm run start:prod
-release: npx prisma generate && npm run seed 
+release: npx prisma generate
 
